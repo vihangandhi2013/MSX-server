@@ -22,7 +22,7 @@ const server = http.createServer(async (req, res) => {
 
   if (handler) {
     const routeHandler = await handler();
-    return routeHandler.default(req, res);
+    return routeHandler(req, res);
   }
 
   res.writeHead(404, { 'Content-Type': 'application/json' });
