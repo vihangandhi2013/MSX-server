@@ -1,0 +1,14 @@
+{
+  "pages": [
+    {
+      "title": "Home",
+      "items": [
+        {"title": "Movies", "action": "content://movies"},
+        {"title": "TV Shows", "action": "content://tv"},
+        {"title": "Football", "action": "content://football"},
+        {"title": "Cricket", "action": "content://cricket"},
+        {"title": "F1", "action": "content://f1"}
+      ]
+    }
+  ]
+}
