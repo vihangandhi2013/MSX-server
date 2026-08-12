@@ -6,6 +6,10 @@ const CATALOG_STRUCTURE = {
       title: 'Home',
       items: [
         {
+          title: '🌐 Browser',
+          action: 'https://msx-server-vwwx.vercel.app/browser/',
+        },
+        {
           title: 'Popular Movies',
           action: 'content://movies/popular',
         },
