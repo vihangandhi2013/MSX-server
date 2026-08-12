@@ -7,6 +7,7 @@ Production-ready Media Station X server with TMDB integration, running on Vercel
 - Popular movies and TV shows from TMDB
 - Full-text search for movies and TV shows
 - Detailed metadata: posters, backdrops, ratings, genres, release dates
+- SubDL subtitle lookup endpoint
 - Sports source integration (user-configured)
 - Built-in caching to reduce API calls
 - CORS support for MSX clients
@@ -20,9 +21,9 @@ Production-ready Media Station X server with TMDB integration, running on Vercel
 3. In Vercel project settings, add these environment variables:
    - `TMDB_API_KEY` (required): Get from https://www.themoviedb.org/settings/api
    - `SUBDL_API_KEY` (optional): Subtitle service API key
-   - `FOOTBALL_SOURCE` (optional): Authorized football stream URL
-   - `CRICKET_SOURCE` (optional): Authorized cricket stream URL
-   - `F1_SOURCE` (optional): Authorized F1 stream URL
+   - `FOOTBALL_SOURCE` (optional): Direct stream URL or provider API endpoint
+   - `CRICKET_SOURCE` (optional): Direct stream URL or provider API endpoint
+   - `F1_SOURCE` (optional): Direct stream URL or provider API endpoint
 4. Deploy. Vercel will automatically build and serve the API routes.
 5. Your server URL will be: `https://your-project.vercel.app`
 
@@ -60,6 +61,11 @@ All endpoints return JSON with `error`, `status`, and `data` fields.
 ### Search
 
 - `GET /api/search?query=matrix&type=all&page=1` - Search all (type: all, movies, shows)
+
+### Subtitles
+
+- `GET /api/subtitles?title=Inception&year=2010&languages=en` - Find SubDL subtitles
+- `GET /api/subtitles?tmdb_id=27205&languages=en` - Find subtitles by TMDB ID when supported by the provider
 
 ### Sports
 
